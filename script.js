@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -10,10 +9,10 @@ player.src = "assets/lumi-sprite.png";
 
 background.onload = () => {
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-};
-player.onload = () => {
-  ctx.drawImage(player, 100, 300, 48, 48); // Render piccolo personaggio
+  player.onload = () => {
+    ctx.drawImage(player, 100, 320, 48, 48);
+  };
 };
 
 const music = document.getElementById("bgMusic");
-music.volume = 0.3;
+music.volume = 0.4;
