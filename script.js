@@ -2,15 +2,18 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const bg = new Image();
-bg.src = "assets/background.png";
-
+const background = new Image();
 const player = new Image();
+
+background.src = "assets/background.png";
 player.src = "assets/lumi-sprite.png";
 
+background.onload = () => {
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+};
 player.onload = () => {
-  ctx.drawImage(bg, 0, 0);
-  ctx.drawImage(player, 100, 300);
+  ctx.drawImage(player, 100, 300, 48, 48); // Render piccolo personaggio
 };
 
-document.getElementById("bgMusic").volume = 0.3;
+const music = document.getElementById("bgMusic");
+music.volume = 0.3;
